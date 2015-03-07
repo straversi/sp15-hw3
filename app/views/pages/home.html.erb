@@ -1,0 +1,26 @@
+<h1>Welcome, Users</h1>
+<% @users.each do |u| %>
+	<div class="user">
+	<p> <%= u.username %> </p>
+	<p> <%= u.email %> </p>
+	<p> <%= u.age %> </p>
+	</div>
+<% end %>
+<h1>Welcome, Cats</h1>
+<ol>
+<% @cats.each do |c| %>
+	<li> <%= c.name %> </li>
+<% end %>
+</ol>
+<h2>Finished Tasks</h2>
+<% @todos.each do |t| %>
+	<% if t.finished %>
+		<p> <%= t.task %> </p>
+	<% end %>
+<% end %>
+<h2>Unfinished Tasks</h2>
+<% @todos.each do |t| %>
+	<% if !t.finished %>
+		<p> <%= t.task %> </p>
+	<% end %>
+<% end %>
